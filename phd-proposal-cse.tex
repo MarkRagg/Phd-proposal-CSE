@@ -24,30 +24,106 @@
 
 \maketitle
 \section{State of the art}
+In the first section we summarize the research useful to understanding the state of the art of oncology
+research using the latest advanced technologies. We start by explaining traditional AI technologies
+such as Machine Learning, arriving at the new field of Large Language Models and their today's applications in the oncology field.
 
-\paragraph{Machine Learning}{}
-\paragraph{Large Language Models}{}
-\paragraph{Today's oncology research}{}
+\paragraph{Machine Learning}{Machine Learning is a subfield of Artificial Intelligence. It focuses on creating systems that learn from data and improve their performances over time without being explicitly programmed for a specific task.
+\\\\
+It became popular between the '90 and 2000 with the introduction of popular researches such as SVM\cite{svm1995} and Random Forests\cite{breiman2001} method. 
+Machine Learning has proven effective across a wide range of tasks, finding applications in classification, clustering, regression and anomaly detection, that fits well with real-world problems in many different fields such as medical syndrome detection, traffic sign recognition in autonomous driving systems, financial fraud detection.
+\\\\
+The popularity of this technology leads to the introduction of neural network\cite{lecun2015}. It is a new model of Machine Learning and it is inspired to the human brain construction.
+\\\\
+Neural networks sets a new milestone for Machine Learning because they expanded the scope of its applications to high-dimensional data such as images, videos and complex structured data.}
+\paragraph{Large Language Models}{Large Language Models (LLMs) are a subcategory of Artificial Intelligence (AI), and more specifically, they belong to the field of Deep Learning\cite{vaswani2017}. In recent years, they have become extremely popular thanks to their ability to understand and generate natural language with a high level of fluency and coherence.
+\\\\
+Their generalized knowledge and versatility make them perfect for a wide range of applications, from text generation and translation to code assistance, question answering, and conversational systems.
+The ability to generate natural language fits perfectly with the need to create systems that can be used by everyone without requiring specific technical knowledge.
+\\\\
+Unlike traditional software interfaces, which often require predefined commands or structured inputs, LLMs allow users to interact using natural language, making human-computer interaction more intuitive and accessible.
+\\\\
+An extension of classic LLMs are Multimodal Models\cite{huang2024}. While LLMs only generate text from a given text input, Multimodal Models are capable of processing not only text, but also images, audio and other data types within the same model. This feature extends their application to a wider range of use cases and opens new possibilities for integrating AI diagnostic tools into the medical workflow.
+\\\\
+Recent evolutions of LLMs include the introduction of AI Agents. Their ability to autonomously plan and execute multi-step tasks enables them to perform complex workflows with minimal human interaction. AI Agents can also interact with external tools such as APIs, databases and other external resources, further expanding the capabilities of LLMs.}
+\paragraph{Today's oncology research}{In recent years, oncology research has increasingly adopted Machine Learning and LLMs as integrated tools for cancer diagnosis. In particular, studies show that Machine Learning models have high performance sometimes near to the 100\% of accuracy in cancer detection\cite{}, with the most studied cancers being breast cancer, lung cancer, followed by brain, skin and liver cancer. 
+\\\\
+A systematic literature review of March 2026 shows that ML approaches remain concentrated on well-studied cancer types such as breast and lung cancer, while other areas such as brain, ocular and rare cancers remain underrepresented or understudied in the literature. 
+\\\\
+While ML classifiers achieved reasonable success in specific tasks such as thyroid carcinoma diagnosis, their dependency on manual feature extraction limited their generalizability and robustness against data variability, creating a bottleneck that drove the development of Deep Learning. Deep Learning overcame these limitations by automatically learning representations from raw data, however its 
+application remained largely confined to structured and visual data. This gap is where Large Language Models have found their role in oncology, enabling automated extraction of relevant information from clinical texts and supporting clinical decision-making processes.
+\\\\
+These technologies can both integrated in the medical worflow for automating the data extraction (LLM), identifying possible anomalies (ML) and supporting decision-making processes (LLM).}
 
 \subsection{Previous experience}
+During my Master's degree I became curious about AI and its possible applications while attending the "Machine Learning" course. This led me to follow the "Intelligent Systems Engineering" course and eventually to write my Thesis on Large Language Model Architectures.
+
+My passion for sports and medicine led me to think about possible applications of AI in the medical field.
+
 \section{Project Description}
 
 \subsection{Motivations}
+As we said in the previous section, Machine Learning training needs a large amount of structured data that is now extracted manually by medical professionals, which is a bottleneck for the development of AI-based diagnostic tools and it can be also a source of errors in the final datasets. 
+\\\\
+Recent research show that AI can improve the efficiency of data extraction from clinical texts and the identification of anomalies in the data, but there is still a gap in the literature about the integration of these technologies in the medical workflow.
+In our opinion, this is due to the fact that the medical research community is strictly dependent to the IT research community and this factor slow down the speed of integration.
+\\\\
+The main motivation of this project is to fill this gap by developing technologies that can be integrated in the medical workflow, with a particular focus on oncology. These technologies include the automation of data extraction, their quality, the identification of possible human errors and the creation of Machine Learning models for classification of cancer types. 
 \subsection{Idea}
+
 \subsection{Challenges}
-\subsection{Data Retrieval}
+\paragraph{Creating the architecture}
+
+\paragraph{LLM Privacy and Security}{}
+
+\paragraph{Data Retrieval}{One of the main challenges of medical research is how the data is retrieved and manipulated. 
+In particular, the data should represent real cases and be of high quality, but at the same time it should be anonymized to protect the privacy of patients.   
+}
+
+\subsection{Data Retrieval Strategy}
+A well known strategy to overcome the data retrieval problem is to collaborate with real sanitary public institutes. Such collaborations requires times and includes the process of access and anonymization of the data that should be take in consideration. For this reason, part of the project will be dedicated to the activity of searching for collaborations with these istitutes such as Ausl Romagna and IRST of Meldola and the anonymization process.
+\\\\
+A fallback strategy will be also defined in case the collaborations are not found in time. This strategy includes the use of publicly available datasets such as TCGA dataset\footnote{\url{https://github.com/jkefeli/tcga-path-reports}}, US Cancer Registry\footnote{\url{https://portal.gdc.cancer.gov/}} or Belgium Cancer Registry\footnote{\url{https://kankerregister.org/en}} (with previous formal demand) and it could also include the generation of synthetic data and the verification of its realism.
 
 \section{Expected Results}
 
-\paragraph{Technical Deliverables}{}
-\paragraph{Scientific Contributions}{}
+\paragraph{Technical Deliverables}{On a concrehete level, the expected results of this project include:
+\begin{enumerate}
+    \item The development of a framework architecture for oncology purposes that automate the data extraction process, incrementing the quality of the data, identifying possible human errors.
+    \item Adapting such framework in order to integrate it in a real medical workflow.
+    \item Evaluation of the developed framework against real-world cases, identifying the scenarios in which the automated pipeline performs best and those where human supervision remains essential.
+\end{enumerate}
+}
+\paragraph{Scientific Contributions}{During the first year, a systematic literature review in the field of LLM and ML application on the oncology field will be created and published. This will helps to increase the personal knowledge for a complete understanding of the state of the art and to identify the gap that will be filled by the project.
+Then, when the architecture is complete, a scientific paper describing the architecture and its application will be published. Finally, the evaluation will be conducted and the results will be published in an another scientific paper.
+}
 
 \section{Subdivision of the project and timeline}
+The project idea is divided in three main phases, corresponding to the three available years:
+
+\begin{enumerate}
+    \item \textbf{Knowledge acquisition and collaboration search} (first year)
+    \begin{itemize}
+        \item The study of literature will be consistent and it will produce the systematic literature review described in the previous section.
+        \item Phd courses will be chosen and followed in order to acquire more knowledge passing the exams.
+        \item The search of collaborations will be conducted in parallel with the knowledge acquisition and it continues with the process of data anonymization.
+    \end{itemize} 
+    \item \textbf{Design and implementation of the framework} (second year)
+    \begin{itemize}
+        \item Design and implementation of the proposed framework.
+        \item Refinement of the framework and its adaptation with the collaborators feedbacks for the integration in the medical workflow.
+    \end{itemize}
+    \item \textbf{Evaluation and dissemination} (third year)
+    \begin{itemize}
+        \item Evaluation and dissemination of the developed framework against real-world cases.
+        \item Write final thesis.
+    \end{itemize}
+\end{enumerate}
 
 \section{Proposed evaluation criteria}
 
 \nocite{*}
-\bibliographystyle{alpha}
+\bibliographystyle{unsrt}
 \bibliography{bibliography}
 
 \end{document}
