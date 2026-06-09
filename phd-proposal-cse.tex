@@ -7,7 +7,7 @@
 \newcommand{\version}{\versionmajor.\versionminor.\versionpatch}
 
 \title{\LARGE
-    Title
+    Language Model-Based Framework for Automated Data Extraction and Quality Control in Oncological Cancer Registries
 }
 
 \subtitle{Ph.D. Project Proposal}
@@ -23,7 +23,7 @@
 \begin{document}
 
 \maketitle
-\section{State of the art}
+\section{State of the art} \label{state-of-art}
 In the first section we summarize the research useful to understanding the state of the art of oncology
 research using the latest advanced technologies. We start by explaining traditional AI technologies
 such as Machine Learning, arriving at the new field of Large Language Models and their today's applications in the oncology field.
@@ -45,15 +45,17 @@ Unlike traditional software interfaces, which often require predefined commands 
 \\\\
 An extension of classic LLMs are Multimodal Models\cite{huang2024}. While LLMs only generate text from a given text input, Multimodal Models are capable of processing not only text, but also images, audio and other data types within the same model. This feature extends their application to a wider range of use cases and opens new possibilities for integrating AI diagnostic tools into the medical workflow.
 \\\\
-Recent evolutions of LLMs include the introduction of AI Agents. Their ability to autonomously plan and execute multi-step tasks enables them to perform complex workflows with minimal human interaction. AI Agents can also interact with external tools such as APIs, databases and other external resources, further expanding the capabilities of LLMs.}
-\paragraph{Today's oncology research}{In recent years, oncology research has increasingly adopted Machine Learning and LLMs as integrated tools for cancer diagnosis. In particular, studies show that Machine Learning models have high performance sometimes near to the 100\% of accuracy in cancer detection\cite{}, with the most studied cancers being breast cancer, lung cancer, followed by brain, skin and liver cancer. 
+Recent evolutions of LLMs include the introduction of AI Agents. Their ability to autonomously plan and execute multi-step tasks enables them to perform complex workflows with minimal human interaction. AI Agents can also interact with external tools such as APIs, databases and other external resources, further expanding the capabilities of LLMs\cite{xi2023}.
 \\\\
-A systematic literature review of March 2026 shows that ML approaches remain concentrated on well-studied cancer types such as breast and lung cancer, while other areas such as brain, ocular and rare cancers remain underrepresented or understudied in the literature. 
+In the same years, an another AI technology is designed, the Retrieval Augmented Generation (RAG)\cite{rag2020}. RAG introduced a new way to enhance the response of Generative AI. In particular, when a query is processed, the system first retrieves relevant documents or knowledge snippets from an external verified database (such as medical guidelines, clinical repositories, or local patient records). This novelty enables the LLM to generate a facts-based responses\cite{rag2020}.}
+\paragraph{Today's oncology research}{In recent years, oncology research has increasingly adopted Machine Learning and LLMs as integrated tools for cancer diagnosis. In particular, studies show that Machine Learning models have high performance sometimes near to the 100\% of accuracy in cancer detection\cite{Tandon2024}, with the most studied cancers being breast cancer, lung cancer, followed by brain, cervical and liver cancer, using mainly CNN as the primary architecture\cite{Tandon2024}. 
 \\\\
-While ML classifiers achieved reasonable success in specific tasks such as thyroid carcinoma diagnosis, their dependency on manual feature extraction limited their generalizability and robustness against data variability, creating a bottleneck that drove the development of Deep Learning. Deep Learning overcame these limitations by automatically learning representations from raw data, however its 
-application remained largely confined to structured and visual data. This gap is where Large Language Models have found their role in oncology, enabling automated extraction of relevant information from clinical texts and supporting clinical decision-making processes.
+A systematic literature review of February 2026 shows that ML approaches remain concentrated on well-studied cancer types such as breast and lung cancer, while other rare or row reproducibily cancers remain underrepresented or understudied in the literature\cite{rosca2026}. 
 \\\\
-These technologies can both integrated in the medical worflow for automating the data extraction (LLM), identifying possible anomalies (ML) and supporting decision-making processes (LLM).}
+While ML classifiers achieved reasonable success in specific tasks such as thyroid carcinoma diagnosis, their dependency on manual feature extraction limited their generalizability and robustness against data variability, creating a bottleneck in this research field. This gap led to the research in Large Language Models. Recently, their research in the oncology field is increased significantly, due to their wide applicability such as the ability to process unstructured data, their generalization capabilities and their ability to generate natural language, enabling automated extraction of relevant information from clinical texts and supporting clinical decision-making processes\cite{rahman2026}. 
+This technology could also resolve a common problem of ML-based diagnostic tools, which is the lack of explainability and then, the trust of such tools by medical professionals\cite{rahman2026}. However, studies show some critical issue about the use of LLM in this field. The main issue refers to the hallucination that may produces during the generation of the responses\cite{rahman2026}.
+\\\\
+These technologies can both integrated in the medical worflow for automating the data extraction (LLM), identifying possible anomalies (ML/LLM) and supporting decision-making processes (LLM).}
 
 \subsection{Previous experience}
 During my Master's degree I became curious about AI and its possible applications while attending the "Machine Learning" course. This led me to follow the "Intelligent Systems Engineering" course and eventually to write my Thesis on Large Language Model Architectures.
@@ -63,18 +65,34 @@ My passion for sports and medicine led me to think about possible applications o
 \section{Project Description}
 
 \subsection{Motivations}
-As we said in the previous section, Machine Learning training needs a large amount of structured data that is now extracted manually by medical professionals, which is a bottleneck for the development of AI-based diagnostic tools and it can be also a source of errors in the final datasets. 
+As we said in the \cref{state-of-art}, Machine Learning training needs a large amount of structured data that is now extracted manually by medical professionals, which is a bottleneck for the development of AI-based diagnostic tools and it can be also a source of errors in the final datasets. 
 \\\\
-Recent research show that AI can improve the efficiency of data extraction from clinical texts and the identification of anomalies in the data, but there is still a gap in the literature about the integration of these technologies in the medical workflow.
-In our opinion, this is due to the fact that the medical research community is strictly dependent to the IT research community and this factor slow down the speed of integration.
-\\\\
-The main motivation of this project is to fill this gap by developing technologies that can be integrated in the medical workflow, with a particular focus on oncology. These technologies include the automation of data extraction, their quality, the identification of possible human errors and the creation of Machine Learning models for classification of cancer types. 
+Recent research show that AI can improve the efficiency of data extraction from clinical texts and the identification of anomalies in the data, but there is still a gap in the literature about the integration of these technologies in the medical workflow\cite{Artsi2025}.
+In our opinion, this is also due to the fact that the medical research community is strictly dependent to the IT research community and this factor slow down the speed of integration.
 \subsection{Idea}
-
+The idea of this project is to fill this gap by developing technologies that can be integrated in the medical workflow, with a particular focus on oncology. 
+The core of the project is the design and implementation of a framework architecture that includes:
+\paragraph{Automation of Data Extraction}{The first important component of the architecture is the automation of data extraction from clinical documents. This component will be based on a Language Model that will be used to extract relevant information. Its usage will be focused on the extraction, but also on the structuring of such data, focussing on the structuring in well known standard formats such as ICD-O-3\footnote{\url{https://www.who.int/standards/classifications/other-classifications/international-classification-of-diseases-for-oncology}} and TNM\footnote{\url{https://www.uicc.org/resources/tnm}}.}
+\paragraph{Data Quality and Dyscrasias Detection}{The second component of the architecture includes the identification of possible human errors in the data. This component will ensure the quality of the structured data and it will be based on a Language Model that will be used to identify anomalies in already existing data. The usage of LLM/SLM improve the speed of identification process and it generates natural language explanations of the possible errors, facilitating the human-in-the-loop approach for the supervision of the process.}
+\paragraph{Diagnostic Support}{In case of the previous components are successfully implemented and evaluated in a modest time, the architecture could be extended to include a diagnostic support component.
+If the architecture has a good performance in the previous components, the logical next step is to use the produced data to train a Machine Learning model for diagnostic purpose and then integrate it in the framework.}
+\paragraph{Integration of the architecture in a real medical workflow}{A core focus of this project is ensuring high potential for real-world clinical adoption. In order to ensure that, standard formats will be used (ICD-O-3 and TNM) and the framework must remains generic and extendible.
+In case of collaborations with public istitutes, the architecture will be adapted in order to maximize the usability for specific requests.
+}
+\\\\
+This architecture is designed to be a tool for medical professionals. For this reason, it is ideated as an automation of a manual process, with the aim of improving the efficiency and the quality of the data, but without replacing the human supervision. 
 \subsection{Challenges}
-\paragraph{Creating the architecture}
+\paragraph{Architecture weaknesses}{
+This architecture may face various challenges. As mentioned in the previous section, hallucination is a well-known problem in medical LLM applications. It is particularly relevant in this context because it could lead to a deterioration of output quality and a consequent decrease in trustworthiness. 
+A mitigation strategy will include the use of a RAG approach.
+\\\\
+The framework may also encounter incomplete or ambiguous clinical documents, which could reduce the quality of the output. A robust architecture should handle these situations by identifying such cases and signaling the need for human supervision, avoiding the automatic gap-filling that LLMs tend to perform. 
+}
 
-\paragraph{LLM Privacy and Security}{}
+\paragraph{LLM Privacy and Security}{The use of LLMs in healthcare involves significant privacy and security concerns, in particular, regarding the European GDPR regulation.
+For this reason, a strategy for the use of LLMs will be defined. A possible strategy is to use open-source Small Language Models (SLMs) such as LLaMa or Ministral, that can be trained and used locally without the need of sending data to external servers or enterprises. These SLMs are nowadays very powerful and they can be used for many different tasks. LLMs can also be used for different tasks that not involve the use of sensitive data, such as data synthesis.
+\\\\
+These privacy and security concerns are also strictly related of how strict are possible collaborators concerns and the hardware possibilities of the research group or the collaborators. A strong hardware could permit the use of local Large or Medium Language Models, providing better performances and a wider range of applications, while a weaker hardware consequently limits the use of SLMs with a possible decrease of the performance. }
 
 \paragraph{Data Retrieval}{One of the main challenges of medical research is how the data is retrieved and manipulated. 
 In particular, the data should represent real cases and be of high quality, but at the same time it should be anonymized to protect the privacy of patients.   
