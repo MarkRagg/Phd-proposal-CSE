@@ -76,7 +76,7 @@ The core of the project is the design and implementation of a framework architec
 \paragraph{Data Quality and Dyscrasias Detection}{The second component of the architecture includes the identification of possible human errors in the data. This component will ensure the quality of the structured data and it will be based on a Language Model that will be used to identify anomalies in already existing data. The usage of LLM/SLM improve the speed of identification process and it generates natural language explanations of the possible errors, facilitating the human-in-the-loop approach for the supervision of the process.}
 \paragraph{Diagnostic Support}{In case of the previous components are successfully implemented and evaluated in a modest time, the architecture could be extended to include a diagnostic support component.
 If the architecture has a good performance in the previous components, the logical next step is to use the produced data to train a Machine Learning model for diagnostic purpose and then integrate it in the framework.}
-\paragraph{Integration of the architecture in a real medical workflow}{A core focus of this project is ensuring high potential for real-world clinical adoption. In order to ensure that, standard formats will be used (ICD-O-3 and TNM) and the framework must remains generic and extendible.
+\paragraph{Integration of the architecture in a real medical workflow}{A core focus of this project is ensuring high potential for real-world clinical adoption. In order to ensure that, standard formats will be used and the framework must remains generic and extendible.
 In case of collaborations with public istitutes, the architecture will be adapted in order to maximize the usability for specific requests.
 }
 \\\\
@@ -96,13 +96,11 @@ These privacy and security concerns are also strictly related of how strict are 
 
 \paragraph{Data Retrieval}{One of the main challenges of medical research is how the data is retrieved and manipulated. 
 In particular, the data should represent real cases and be of high quality, but at the same time it should be anonymized to protect the privacy of patients.   
-}
-
-\subsection{Data Retrieval Strategy}
+\\\\
 A well known strategy to overcome the data retrieval problem is to collaborate with real sanitary public institutes. Such collaborations requires times and includes the process of access and anonymization of the data that should be take in consideration. For this reason, part of the project will be dedicated to the activity of searching for collaborations with these istitutes such as Ausl Romagna and IRST of Meldola and the anonymization process.
 \\\\
 A fallback strategy will be also defined in case the collaborations are not found in time. This strategy includes the use of publicly available datasets such as TCGA dataset\footnote{\url{https://github.com/jkefeli/tcga-path-reports}}, US Cancer Registry\footnote{\url{https://portal.gdc.cancer.gov/}} or Belgium Cancer Registry\footnote{\url{https://kankerregister.org/en}} (with previous formal demand) and it could also include the generation of synthetic data and the verification of its realism.
-
+}
 \section{Expected Results}
 
 \paragraph{Technical Deliverables}{On a concrehete level, the expected results of this project include:
@@ -112,7 +110,7 @@ A fallback strategy will be also defined in case the collaborations are not foun
     \item Evaluation of the developed framework against real-world cases, identifying the scenarios in which the automated pipeline performs best and those where human supervision remains essential.
 \end{enumerate}
 }
-\paragraph{Scientific Contributions}{During the first year, a systematic literature review in the field of LLM and ML application on the oncology field will be created and published. This will helps to increase the personal knowledge for a complete understanding of the state of the art and to identify the gap that will be filled by the project.
+\paragraph{Scientific Contributions}\label{scientific-contribution}{During the first year, a systematic literature review in the field of LLM and ML application on the oncology field will be created and published. This will helps to increase the personal knowledge for a complete understanding of the state of the art and to identify the gap that will be filled by the project.
 Then, when the architecture is complete, a scientific paper describing the architecture and its application will be published. Finally, the evaluation will be conducted and the results will be published in an another scientific paper.
 }
 
@@ -139,8 +137,13 @@ The project idea is divided in three main phases, corresponding to the three ava
 \end{enumerate}
 
 \section{Proposed evaluation criteria}
+The proposed evaluation criteria include three main categories of criterias:
+\begin{itemize}
+    \item \textbf{Scientific criteria}: the project is successful if at least the scientific contribution explained in \cref{scientific-contribution} are achieved.
+    \item \textbf{Performance criteria}: the framework will be evaluated using performance criteria for each part of the process, including the evaluation of the quality of data extraction and structured output, percentage of dyscrasias detection out of the total and the accuracy of diagnostic support output. These metrics are considered the main ones, but each of it has sub metrics that includes the generation of false negatives and false positives.   
+    \item \textbf{Real scenario criteria}: if the architecture is deployed in a real scenario, a positive evaluation include a significant reduction of time spending of medical professionals in specific stasks and if the framework has a concrete impacts on the efficiency of the collaborators. 
+\end{itemize}
 
-\nocite{*}
 \bibliographystyle{unsrt}
 \bibliography{bibliography}
 
