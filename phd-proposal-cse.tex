@@ -36,7 +36,7 @@ Machine Learning has proven effective across a wide range of tasks, finding appl
 The popularity of this technology led to the introduction of neural network\cite{lecun2015}. It is a new model of Machine Learning and it is inspired by the human brain construction.
 \\\\
 Neural networks set a new milestone for Machine Learning because they expanded the scope of its applications to high-dimensional data such as images, videos and complex structured data.}
-\paragraph{Large Language Models}{Large Language Models (LLMs) are a subcategory of Artificial Intelligence (AI), and more specifically, they belong to the field of Deep Learning\cite{vaswani2017}. In recent years, they have become extremely popular thanks to their ability to understand and generate natural language with a high level of fluency and coherence.
+\paragraph{Large Language Models}\label{llm-background}{Large Language Models (LLMs) are a subcategory of Artificial Intelligence (AI), and more specifically, they belong to the field of Deep Learning\cite{vaswani2017}. In recent years, they have become extremely popular thanks to their ability to understand and generate natural language with a high level of fluency and coherence.
 \\\\
 Their generalized knowledge and versatility make them perfect for a wide range of applications, from text generation and translation to code assistance, question answering, and conversational systems.
 The ability to generate natural language fits perfectly with the need to create systems that can be used by everyone without requiring specific technical knowledge.
@@ -72,50 +72,50 @@ In our opinion, this is also due to the fact that the medical research community
 \subsection{Idea}
 The idea of this project is to fill this gap by developing technologies that can be integrated in the medical workflow, with a particular focus on oncology. 
 The core of the project is the design and implementation of a framework architecture that includes:
-\paragraph{Automation of Data Extraction}{The first important component of the architecture is the automation of data extraction from clinical documents. This component will be based on a Language Model that will be used to extract relevant information. Its usage will be focused on the extraction, but also on the structuring of such data, focussing on the structuring in well known standard formats such as ICD-O-3\footnote{\url{https://www.who.int/standards/classifications/other-classifications/international-classification-of-diseases-for-oncology}} and TNM\footnote{\url{https://www.uicc.org/resources/tnm}}.}
-\paragraph{Data Quality and Dyscrasias Detection}{The second component of the architecture includes the identification of possible human errors in the data. This component will ensure the quality of the structured data and it will be based on a Language Model that will be used to identify anomalies in already existing data. The usage of LLM/SLM improve the speed of identification process and it generates natural language explanations of the possible errors, facilitating the human-in-the-loop approach for the supervision of the process.}
-\paragraph{Diagnostic Support}{In case of the previous components are successfully implemented and evaluated in a modest time, the architecture could be extended to include a diagnostic support component.
+\paragraph{Automation of Data Extraction}{The first important component of the architecture is the automation of data extraction from clinical documents. This component will be based on a Language Model that will be used to extract relevant information. Its usage will be focused on the extraction, but also on the structuring of such data, aiming to organize this information in well known standard formats such as ICD-O-3\footnote{\url{https://www.who.int/standards/classifications/other-classifications/international-classification-of-diseases-for-oncology}} and TNM\footnote{\url{https://www.uicc.org/resources/tnm}}.}
+\paragraph{Data Quality and Dyscrasias Detection}{The second component of the architecture includes the identification of possible human errors in the data. This component will ensure the quality of the structured data and it will be based on a Language Model that will be used to identify anomalies in already existing data. The usage of LLMs/SLMs improve the speed of identification process and it generates natural language explanations of the possible errors, facilitating the human-in-the-loop approach for the supervision of the process.}
+\paragraph{Diagnostic Support}{If the previous components are successfully implemented and evaluated in a modest time, the architecture could be extended to include a diagnostic support component.
 If the architecture has a good performance in the previous components, the logical next step is to use the produced data to train a Machine Learning model for diagnostic purpose and then integrate it in the framework.}
-\paragraph{Integration of the architecture in a real medical workflow}{A core focus of this project is ensuring high potential for real-world clinical adoption. In order to ensure that, standard formats will be used and the framework must remains generic and extendible.
+\paragraph{Integration of the architecture in a real medical workflow}{A core focus of this project is ensuring high potential for real-world clinical adoption. In order to ensure that, standard formats will be used and the framework must remain generic and extendible.
 In case of collaborations with public istitutes, the architecture will be adapted in order to maximize the usability for specific requests.
 }
 \\\\
 This architecture is designed to be a tool for medical professionals. For this reason, it is ideated as an automation of a manual process, with the aim of improving the efficiency and the quality of the data, but without replacing the human supervision. 
 \subsection{Challenges}
 \paragraph{Architecture weaknesses}{
-This architecture may face various challenges. As mentioned in the previous section, hallucination is a well-known problem in medical LLM applications. It is particularly relevant in this context because it could lead to a deterioration of output quality and a consequent decrease in trustworthiness. 
+This architecture may face various challenges. As mentioned in the \cref{llm-background} hallucination is a well-known problem in medical LLM applications. It is particularly relevant in this context because it could lead to a deterioration of output quality and a consequent decrease in trustworthiness. 
 A mitigation strategy will include the use of a RAG approach.
 \\\\
 The framework may also encounter incomplete or ambiguous clinical documents, which could reduce the quality of the output. A robust architecture should handle these situations by identifying such cases and signaling the need for human supervision, avoiding the automatic gap-filling that LLMs tend to perform. 
 }
 
 \paragraph{LLM Privacy and Security}{The use of LLMs in healthcare involves significant privacy and security concerns, in particular, regarding the European GDPR regulation.
-For this reason, a strategy for the use of LLMs will be defined. A possible strategy is to use open-source Small Language Models (SLMs) such as LLaMa or Ministral, that can be trained and used locally without the need of sending data to external servers or enterprises. These SLMs are nowadays very powerful and they can be used for many different tasks. LLMs can also be used for different tasks that not involve the use of sensitive data, such as data synthesis.
+For this reason, a strategy for the use of LLMs will be defined. A possible strategy is to use open-source Small Language Models (SLMs) such as LLaMa or Ministral, that can be trained and used locally without the need of sending data to external servers or enterprises. These SLMs are nowadays very powerful and they can be used for many different tasks. LLMs can also be used for different tasks that do not involve the use of sensitive data, such as data synthesis.
 \\\\
-These privacy and security concerns are also strictly related of how strict are possible collaborators concerns and the hardware possibilities of the research group or the collaborators. A strong hardware could permit the use of local Large or Medium Language Models, providing better performances and a wider range of applications, while a weaker hardware consequently limits the use of SLMs with a possible decrease of the performance. }
+These privacy and security concerns are also strictly related to the specific compliance constraints of future collaborators and the hardware possibilities of the research group or the collaborators. A strong hardware could permit the use of local Large or Medium Language Models, providing better performances and a wider range of applications, while a weaker hardware consequently limits the use of SLMs with a possible decrease of the performance. }
 
 \paragraph{Data Retrieval}{One of the main challenges of medical research is how the data is retrieved and manipulated. 
 In particular, the data should represent real cases and be of high quality, but at the same time it should be anonymized to protect the privacy of patients.   
 \\\\
-A well known strategy to overcome the data retrieval problem is to collaborate with real sanitary public institutes. Such collaborations requires times and includes the process of access and anonymization of the data that should be take in consideration. For this reason, part of the project will be dedicated to the activity of searching for collaborations with these istitutes such as Ausl Romagna and IRST of Meldola and the anonymization process.
+A well known strategy to overcome the data retrieval problem is to collaborate with real sanitary public institutes. Such collaborations require time and includes the process of access and anonymization of the data that should be taken into consideration. For this reason, part of the project will be dedicated to the activity of searching for collaborations with these istitutes such as Ausl Romagna and IRST of Meldola and the anonymization process.
 \\\\
-A fallback strategy will be also defined in case the collaborations are not found in time. This strategy includes the use of publicly available datasets such as TCGA dataset\footnote{\url{https://github.com/jkefeli/tcga-path-reports}}, US Cancer Registry\footnote{\url{https://portal.gdc.cancer.gov/}} or Belgium Cancer Registry\footnote{\url{https://kankerregister.org/en}} (with previous formal demand) and it could also include the generation of synthetic data and the verification of its realism.
+A fallback strategy will be also defined in case the collaborations are not found in time. This strategy includes the use of publicly available datasets such as TCGA dataset\footnote{\url{https://github.com/jkefeli/tcga-path-reports}}, US Cancer Registry\footnote{\url{https://portal.gdc.cancer.gov/}} or Belgium Cancer Registry\footnote{\url{https://kankerregister.org/en}} (subject to a formal request) and it could also include the generation of synthetic data and the verification of its realism.
 }
 \section{Expected Results}
 
-\paragraph{Technical Deliverables}{On a concrehete level, the expected results of this project include:
+\paragraph{Technical Deliverables}{On a practical level, the expected results of this project include:
 \begin{enumerate}
-    \item The development of a framework architecture for oncology purposes that automate the data extraction process, incrementing the quality of the data, identifying possible human errors.
+    \item The development of a framework architecture for oncology purposes that automates the data extraction process, enhancing the quality of the data, identifying possible human errors.
     \item Adapting such framework in order to integrate it in a real medical workflow.
     \item Evaluation of the developed framework against real-world cases, identifying the scenarios in which the automated pipeline performs best and those where human supervision remains essential.
 \end{enumerate}
 }
-\paragraph{Scientific Contributions}\label{scientific-contribution}{During the first year, a systematic literature review in the field of LLM and ML application on the oncology field will be created and published. This will helps to increase the personal knowledge for a complete understanding of the state of the art and to identify the gap that will be filled by the project.
+\paragraph{Scientific Contributions}\label{scientific-contribution}{During the first year, a systematic literature review in the field of LLM and ML application on the oncology field will be created and published. This will help to increase the personal knowledge for a complete understanding of the state of the art and to identify the gap that will be filled by the project.
 Then, when the architecture is complete, a scientific paper describing the architecture and its application will be published. Finally, the evaluation will be conducted and the results will be published in an another scientific paper.
 }
 
 \section{Subdivision of the project and timeline}
-The project idea is divided in three main phases, corresponding to the three available years:
+The project idea is divided into three main phases, corresponding to the three available years:
 
 \begin{enumerate}
     \item \textbf{Knowledge acquisition and collaboration search} (first year)
@@ -137,11 +137,11 @@ The project idea is divided in three main phases, corresponding to the three ava
 \end{enumerate}
 
 \section{Proposed evaluation criteria}
-The proposed evaluation criteria include three main categories of criterias:
+The proposed evaluation criteria include three main categories of criteria:
 \begin{itemize}
     \item \textbf{Scientific criteria}: the project is successful if at least the scientific contribution explained in \cref{scientific-contribution} are achieved.
-    \item \textbf{Performance criteria}: the framework will be evaluated using performance criteria for each part of the process, including the evaluation of the quality of data extraction and structured output, percentage of dyscrasias detection out of the total and the accuracy of diagnostic support output. These metrics are considered the main ones, but each of it has sub metrics that includes the generation of false negatives and false positives.   
-    \item \textbf{Real scenario criteria}: if the architecture is deployed in a real scenario, a positive evaluation include a significant reduction of time spending of medical professionals in specific stasks and if the framework has a concrete impacts on the efficiency of the collaborators. 
+    \item \textbf{Performance criteria}: the framework will be evaluated using performance criteria for each part of the process, including the evaluation of the quality of data extraction and structured output, percentage of dyscrasias detection out of the total and the accuracy of diagnostic support output. These metrics are considered the main ones, but each of them has sub metrics that includes the generation of false negatives and false positives.   
+    \item \textbf{Real scenario criteria}: if the architecture is deployed in a real scenario, a positive evaluation include a significant reduction in the time spent by medical professionals on specific stasks and if the framework has a concrete impact on the efficiency of the collaborators. 
 \end{itemize}
 
 \bibliographystyle{unsrt}
