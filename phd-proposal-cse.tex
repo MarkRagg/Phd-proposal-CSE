@@ -51,7 +51,7 @@ Around the same period, another important AI technology emerged, the Retrieval A
 \\\\
 A systematic literature review of February 2026 shows that ML approaches remain concentrated on well-studied cancer types such as breast and lung cancer, while other rare or low reproducibility cancers remain underrepresented or understudied in the literature~\cite{rosca2026}. 
 \\\\
-While ML classifiers achieved reasonable success in specific tasks such as thyroid carcinoma diagnosis, their dependency on manual feature extraction limited their generalizability and robustness against data variability, creating a bottleneck in this research field. This gap led to the research in Large Language Models. Research on LLMs in oncology has increased significantly in recent years, due to their wide applicability such as the ability to process unstructured data, their generalization capabilities and their ability to generate natural language, enabling automated extraction of relevant information from clinical texts and supporting clinical decision-making processes~\cite{rahman2026}. 
+While ML classifiers achieved reasonable success in specific tasks, their dependency on manual feature extraction limited their generalizability and robustness against data variability, creating a bottleneck in this research field. This gap led to the research in Large Language Models. Research on LLMs in oncology has increased significantly in recent years, due to their wide applicability such as the ability to process unstructured data, their generalization capabilities and their ability to generate natural language, enabling automated extraction of relevant information from clinical texts and supporting clinical decision-making processes~\cite{rahman2026}. 
 This technology could also resolve a common problem of ML-based diagnostic tools, which is the lack of explainability and then, the trust of such tools by medical professionals~\cite{rahman2026}. However, studies show several critical issue regarding the use of LLM in this field. The main concern is hallucination that may produce during the generation of the responses~\cite{rahman2026}.
 \\\\
 These technologies can be both integrated in the medical worflow for automating the data extraction (LLM), identifying possible anomalies (ML/LLM) and supporting decision-making processes (LLM).}
@@ -71,7 +71,7 @@ First, a large portion of oncology information is stored in unstructured clinica
 \\\\
 Second, the quality and consistency of oncology datasets remain critical issues. Inaccurate or incomplete data can negatively affect both clinical activities and the development of AI models for diagnostic support.
 \\\\
-Finally, a recent systematic review provides evidence that LLMs can improve clinical workflows and support healthcare professionals in several tasks. However, despite these promising results, their adoption in real-world clinical settings remains limited\cite{Artsi2025}.
+Finally, a recent systematic review provides evidence that LLMs has potential to improve clinical workflows and support healthcare professionals in several tasks. However, despite these promising results, their adoption in real-world institutes remains limited\cite{Artsi2025} and no enstablished frameworks have adopted this technology.
 \subsection{Idea}
 The idea of this project aims to fill the gap by developing technologies that can be integrated in the medical workflow, with a particular focus on oncology. 
 The core of the project is the design and implementation of a framework architecture that includes:
@@ -83,7 +83,7 @@ This component has high impact potential, as it could significantly reduces the 
 \\\\
 This component can have a relevant impact on the robustness of oncology datasets, since data quality issues are often difficult to detect in large amounts of data. Automating this process not only speeds up validation, but also improves its consistency and scalability. In addition, the explanations provided by the model can support medical experts in understanding and resolving discrepancies more effectively.}
 \paragraph{Diagnostic Support}{If the previous components are successfully implemented and evaluated in a modest time, the architecture will be extended to include a diagnostic support component.
-If the architecture has a good performance in ensuring data quality, it would also address one of the main bottlenecks in ML-based cancer diagnosis: the lack of reliable and structured training data. This would lay the foundation for training a Machine Learning model for diagnostic support, which would then be integrated as an extension of the framework.
+If the architecture has a good performance in ensuring data quality, it would also address one of the main bottlenecks in ML-based cancer diagnosis, which is the lack of reliable and structured training data. This would lay the foundation for training a Machine Learning model for diagnostic support, which would then be integrated as an extension of the framework.
 \\\\
 This component has the potential to support medical professionals by providing additional information during the diagnostic process, while maintaining the human expert as the final decision maker. It may also have an impact on the research domain by contributing to the development of Machine Learning models for cancer detection and other oncology applications.
 }
