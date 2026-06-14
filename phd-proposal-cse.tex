@@ -63,13 +63,17 @@ My passion for sports and medicine led me to think about possible applications o
 
 \section{Project Description}
 
-\subsection{Motivations}
-As outlined in the \cref{state-of-art}, Machine Learning training needs a large amount of structured data that is now extracted manually by medical professionals, which is a bottleneck for the development of AI-based diagnostic tools and it can be also a source of errors in the final datasets. 
+\subsection{Motivations and Problem Statement}
+As outlined in the \cref{state-of-art}, Artificial Intelligence has shown promising results in oncology. Machine Learning and Large Language Models have demonstrated their potential in cancer detection, information extraction from clinical documents, and clinical decision support.
+Despite these advances, several challenges still limit the effective adoption of AI technologies in oncology research and clinical practice.
 \\\\
-Recent research show that AI can improve the efficiency of data extraction from clinical texts and the identification of anomalies in the data, but there is still a gap in the literature about the integration of these technologies in the medical workflow~\cite{Artsi2025}.
-This may also due to the fact that the medical research community is strongly dependent on IT research community and this factor slows down the speed of integration.
+First, a large portion of oncology information is stored in unstructured clinical documents and pathology reports. The extraction of information from these documents is still largely performed manually. This issue affects oncology research because the manual extraction of data is time-consuming and may introduce human errors in the process, creating a bottleneck for later stages of the research process. 
+\\\\
+Second, the quality and consistency of oncology datasets remain critical issues. Inaccurate or incomplete data can negatively affect both clinical activities and the development of AI models for diagnostic support.
+\\\\
+Finally, a recent systematic review provides evidence that LLMs can improve clinical workflows and support healthcare professionals in several tasks. However, despite these promising results, their adoption in real-world clinical settings remains limited\cite{Artsi2025}.
 \subsection{Idea}
-The idea of this project is to fill this gap by developing technologies that can be integrated in the medical workflow, with a particular focus on oncology. 
+The idea of this project aim to fill the gap by developing technologies that can be integrated in the medical workflow, with a particular focus on oncology. 
 The core of the project is the design and implementation of a framework architecture that includes:
 \paragraph{Automation of Data Extraction}{The first important component of the architecture is the automation of data extraction from clinical documents. This component will be based on a Language Model that will be used to extract relevant information. Its usage will be focused on the extraction, but also on the structuring of such data, aiming to organize this information in widely adopted standard formats such as ICD-O-3\footnote{\url{https://www.who.int/standards/classifications/other-classifications/international-classification-of-diseases-for-oncology}} and TNM\footnote{\url{https://www.uicc.org/resources/tnm}}.}
 \paragraph{Data Quality and Discrepancies Detection}{The second component of the architecture includes the identification of possible human errors in the data. This component will ensure the quality of the structured data and it will be based on a Language Model that will be used to identify anomalies in already existing data. The use of LLMs/SLMs improve the speed of identification process and it generates natural language explanations of the possible errors, facilitating the human-in-the-loop approach for the supervision of the process.}
